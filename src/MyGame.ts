@@ -35,6 +35,7 @@ export default class MyGame extends Game {
         super();
         
         this.canvas = new GameCanvas(320,180);
+        this.canvas.scale = 2;
         this.spriteBatch = new SpriteBatch(this.canvas);
         this.contentLoader = new ContentLoader();
 
