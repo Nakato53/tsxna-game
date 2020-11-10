@@ -5,6 +5,6 @@ Sample game for the TSXNA-Framework
   - Typescript based
 
 ## How to run
-git clone
-npm install
-npm run dev
+- git clone
+- npm install
+- npm run dev
