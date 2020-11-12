@@ -65,7 +65,7 @@ export default class MyGame extends Game {
             
             this.positions.push({position:new Vector2(Math.random()*320,Math.random()*180), color: new Color(r,g,b,a), angle: Math.random()*360 });
         }
-        this.maMusique.play();    
+        this.maMusique.Play();    
     }
 
     public Update(gameTime:GameTime){
