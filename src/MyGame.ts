@@ -6,7 +6,7 @@ import Color from 'tsxna-framework/Color';
 
 export default class MyGame extends Game {
 
-    private spriteBatch:SpriteBatch;
+    private _spriteBatch:SpriteBatch;
   
 
     constructor(){
@@ -14,7 +14,7 @@ export default class MyGame extends Game {
         
         this.Canvas = new GameCanvas(320,180);
         this.Canvas.Scale = 4;
-        this.spriteBatch = new SpriteBatch(this.Canvas);
+        this._spriteBatch = new SpriteBatch(this.Canvas);
        
        
     }
@@ -31,10 +31,10 @@ export default class MyGame extends Game {
 
     public Draw():void{
         this.Canvas.Clear(Color.CornflowerBlue);
-        this.spriteBatch.Begin();
+        this._spriteBatch.Begin();
 
         
-       this.spriteBatch.End();
+       this._spriteBatch.End();
     }
 
 
