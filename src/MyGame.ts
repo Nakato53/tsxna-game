@@ -1,19 +1,24 @@
-import Game from 'tsxna-framework/Game';
-import GameCanvas from 'tsxna-framework/GameCanvas';
-import SpriteBatch from 'tsxna-framework/Graphics/SpriteBatch';
-import GameTime from 'tsxna-framework/GameTime';
-import Color from 'tsxna-framework/Color';
+import Game from 'tsxna-framework/src/Game';
+import GameCanvas from 'tsxna-framework/src/GameCanvas';
+import SpriteBatch from 'tsxna-framework/src/Graphics/SpriteBatch';
+import GameTime from 'tsxna-framework/src/GameTime';
+import Color from 'tsxna-framework/src/Color';
+import DrawStringCallParameter from 'tsxna-framework/src/Graphics/DrawStringCallParameter';
+import Texture2D from 'tsxna-framework/src/Content/Texture2D';
+import ContentLoader from 'tsxna-framework/src/Content/ContentLoader';
+import DrawCallParameter from 'tsxna-framework/src/Graphics/DrawCallParameter';
+import Vector2 from 'tsxna-framework/src/Vector2';
 
 export default class MyGame extends Game {
 
     private _spriteBatch:SpriteBatch;
-  
+private _bloc:Texture2D;
 
     constructor(){
         super();
         
-        this.Canvas = new GameCanvas(320,180);
-        this.Canvas.Scale = 4;
+        this.Canvas = new GameCanvas(320,240);
+        this.Canvas.AutoScale = true;
         this._spriteBatch = new SpriteBatch(this.Canvas);
        
        
@@ -21,7 +26,7 @@ export default class MyGame extends Game {
 
     public async LoadContent(){
         super.LoadContent();
-
+        this._bloc = await this.Content.Load(Texture2D, "Content/images/bloc.png");
     }
 
     public Update(gameTime:GameTime){
@@ -33,6 +38,7 @@ export default class MyGame extends Game {
         this.Canvas.Clear(Color.CornflowerBlue);
         this._spriteBatch.Begin();
 
+        this._spriteBatch.Draw(new DrawCallParameter(this._bloc).setPosition(new Vector2(300,239)));
         
        this._spriteBatch.End();
     }
