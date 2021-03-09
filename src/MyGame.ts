@@ -3,16 +3,16 @@ import GameCanvas from 'tsxna-framework/src/GameCanvas';
 import SpriteBatch from 'tsxna-framework/src/Graphics/SpriteBatch';
 import GameTime from 'tsxna-framework/src/GameTime';
 import Color from 'tsxna-framework/src/Color';
-import DrawStringCallParameter from 'tsxna-framework/src/Graphics/DrawStringCallParameter';
 import Texture2D from 'tsxna-framework/src/Content/Texture2D';
-import ContentLoader from 'tsxna-framework/src/Content/ContentLoader';
 import DrawCallParameter from 'tsxna-framework/src/Graphics/DrawCallParameter';
 import Vector2 from 'tsxna-framework/src/Vector2';
+import Song from 'tsxna-framework/src/Content/Song';
 
 export default class MyGame extends Game {
 
     private _spriteBatch:SpriteBatch;
-private _bloc:Texture2D;
+    private _bloc:Texture2D;
+    private _music:Song;
 
     constructor(){
         super();
@@ -27,6 +27,9 @@ private _bloc:Texture2D;
     public async LoadContent(){
         super.LoadContent();
         this._bloc = await this.Content.Load(Texture2D, "Content/images/bloc.png");
+        this._music = await this.Content.Load(Song,"Content/musics/background.mp3");
+
+        this._music.Play();
     }
 
     public Update(gameTime:GameTime){
