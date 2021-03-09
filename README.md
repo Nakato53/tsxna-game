@@ -6,5 +6,5 @@ Sample game for the TSXNA-Framework
 
 ## How to run
 - git clone
-- npm install
-- npm run dev
+- yarn
+- yarn dev
