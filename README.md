@@ -11,5 +11,7 @@ Sample game for the TSXNA-Framework
 
 
 ## How to Load a content
+```typescript
 let texture: Texture2D = await this.Content.Load(Texture2D, "Content/images/texture.png");
 let song: Song = await this.Content.Load(Song, "Content/song/song.mp3");
+``` 
